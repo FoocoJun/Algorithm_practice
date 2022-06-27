@@ -12,22 +12,6 @@ var ex_n = 2
 var ex_m = 5
 var ex_Ans = [1,10]
 
-function findDivisor(x) {
-    divisor = [x]
-    for (i=1; i<=x/2;i++) { // n/2 : 1보다 크고 2보다 작은 약수는 없으므로
-                            // 자신보다 작고 자신의 절반보다 큰 약수 또한 없다.
-        if ((x/i)%1==0) {
-            divisor.push(i)
-        }
-        //정수n을 1부터 차례대로 나눴을때 그 값이 정수다? 그것이 약수다.
-    }
-    divisor.sort((a,b) => a - b)
-    console.log(x,'의 약수 : ',divisor)
-
-    return divisor
-}
-
-
 function Exercise_12940(n, m) {
     var answer = []
     let num1 = findDivisor(n)       //n의 약수
@@ -45,6 +29,22 @@ function Exercise_12940(n, m) {
     console.log(answer)
 
     return answer;
+}
+
+
+function findDivisor(x) {
+    divisor = [x]
+    for (i=1; i<=x/2;i++) { // n/2 : 1보다 크고 2보다 작은 약수는 없으므로
+                            // 자신보다 작고 자신의 절반보다 큰 약수 또한 없다.
+        if ((x/i)%1==0) {
+            divisor.push(i)
+        }
+        //정수n을 1부터 차례대로 나눴을때 그 값이 정수다? 그것이 약수다.
+    }
+    divisor.sort((a,b) => a - b)
+    console.log(x,'의 약수 : ',divisor)
+
+    return divisor
 }
 
 function runResult (Res, Ans) {
