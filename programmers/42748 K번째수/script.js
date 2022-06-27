@@ -29,9 +29,22 @@ function Exercise_42748(array, commands) {
 
     return answer;
 }
+
+function Exercise_42748_top(array, commands) {
+    return commands.map(command => {
+        const [sPosition, ePosition, position] = command
+        const newArray = array
+        .filter((value, fIndex) => fIndex >= sPosition -1 && fIndex <= ePosition -1)
+        .sort((a,b) => a - b)
+
+        return newArray[position -1]
+
+    })
+}
+
 function runResult (Res, Ans) {
     console.log("실행결과 : ",Res,"기댓값 : ",Ans)
 }
 
-runResult(Exercise_42748(ex_array,ex_commands),ex_Ans)
+runResult(Exercise_42748_top(ex_array,ex_commands),ex_Ans)
 
