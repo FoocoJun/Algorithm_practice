@@ -16,11 +16,22 @@
 // 입출력 예
 // array	commands	return
 // [1, 5, 2, 6, 3, 7, 4]	[[2, 5, 3], [4, 4, 1], [1, 7, 3]]	[5, 6, 3]
+var ex_array = [1, 5, 2, 6, 3, 7, 4]
+var ex_commands = [[2, 5, 3], [4, 4, 1], [1, 7, 3]]
+var ex_Ans = [5, 6, 3]
 
 function Exercise_42748(array, commands) {
-    console.log(array)
     var answer = [];
+    for (i=0; i< commands.length ; i++) {
+        let list=array.slice(commands[i][0]-1,commands[i][1]).sort((a,b) => a-b)
+        answer.push(list[commands[i][2]-1])
+    }
+
     return answer;
 }
+function runResult (Res, Ans) {
+    console.log("실행결과 : ",Res,"기댓값 : ",Ans)
+}
 
-Exercise_42748([1, 5, 2, 6, 3, 7, 4],[[2, 5, 3], [4, 4, 1], [1, 7, 3]])
+runResult(Exercise_42748(ex_array,ex_commands),ex_Ans)
+
