@@ -10,7 +10,7 @@
 var ex_n = 10
 var ex_Ans = 3
 
-function Exercise_87389(n) {            //n을 n보다 1 작은 수로 나누면 무조건 나머지는 1
+function Exercise_87389(n) {            //37을 37보다 1 작은 수 36(1 2 3 ~~ 18 36)로 나누면 무조건 나머지는 1
     let answer = findDivisor(n-1)[1]    //n보다 1 작은 수를 구성하는 약수중 1이 아닌 가장 작은 수
     return answer;
 }
