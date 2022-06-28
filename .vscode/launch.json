@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\programmers\\12921 소수 찾기\\script.js"
+            "program": "${workspaceFolder}\\programmers\\17681 [1차] 비밀지도\\script.js"
         }
     ]
 }
