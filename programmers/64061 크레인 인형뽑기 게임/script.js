@@ -27,7 +27,7 @@
 // board	moves	result
 // [[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]]	[1,5,3,5,1,2,1,4]	4
 
-var ex_board = [[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]]
+var ex_board = [[0,0,0,0,0],[0,0,22,0,22],[0,22,22,0,22],[22,22,24,24,22],[22,22,22,22,22]]
 var ex_moves = [1,5,3,5,1,2,1,4]
 var ex_Ans = 4
 
@@ -46,7 +46,7 @@ function Exercise_64061(board, moves) {
     //|3,5,1,3,1|        |0,3,1,2,1| 5번 줄
     
     //step-1
-    //reverse를 이용해 뒤집은 후 합쳐서 0 없애고 이후 다시 분리, pop으로 쉽게 뽑기 위함. :line28
+    //reverse를 이용해 뒤집은 후 filter을 통해서 0 없애기, pop으로 쉽게 뽑기 위함.
     //|0,0,0,4,3|        |3,4      | 1번 줄
     //|0,0,2,2,5|        |5,2,2    | 2번 줄
     //|0,1,5,4,1|   =>   |1,4,5,1  | 3번 줄
@@ -57,17 +57,18 @@ function Exercise_64061(board, moves) {
         for (j=0; j<board.length;j++){              
             clon.splice(j,0,board[j][i])
         }
-    
-        array.splice(i,0,clon.reverse().join('').replace(/0/g,'').split(''))
+        array.splice(i,0,clon.reverse())
+        array[i]=array[i].filter((a)=> a!=0 )
         clon = []
     }
     // board의 전치결과 :
-    // console.log(array)
+
+    console.log(array)
     
     //step-2
     //pop을 이용해 k번째 moves에 해당하는 줄에서 뽑아 tong에 담기
     //이때, pop 불가시 undefined 도출
-    //만약 인형이 없는 곳에서 크레인을 작동시키는 경우에는 아무런 일도 일어나지 않습니다. undefined제거 :line57
+    //만약 인형이 없는 곳에서 크레인을 작동시키는 경우에는 아무런 일도 일어나지 않습니다. undefined제거
     //|3,4      |        |3,4      | 1번 줄                          |3        |       | |
     //|5,2,2    |        |5,2,2    | 2번 줄                          |5,2,2    |       | |
     //|1,4,5,1  |   =>   |1,4,5,1  | 3번 줄   =>   moves[k]=1   =>   |1,4,5,1  |   +   | |
@@ -78,25 +79,37 @@ function Exercise_64061(board, moves) {
     //같은 수가 나오면 2개 지우고 2점 올리기
     //각 숫자별 정규표현식 10개를 반복할지 0-9 로 찾으면 연속된 같은 수가 안되어서 고민함.
     //완성된 통에 includes로 한번만 찾기에는 12442가 122로 1로 2번 임의의 n번이 필요해서 for문을 이용함.
-    //추가시 string의 뒤에서부터 붙어서 쌓이니까 최대한 적은 탐색을 위해 (i=tong.length i--)를 이용함.
-    //| |        | |        | |        | |
-    //|1|        | |        | |        | |
-    //|1|   =>   | |   =>   |3|   =>   | |
-    //|3|        |3|        |3|        | |
-    //|4|        |4|score:2 |4|        |4|score:4
+    //추가시 !를 함께 붙여 split('!')를 이용해 배열로 10의자리 이상의 숫자도 구분 할 수 있도록 함
+    //뒤에 붙어서 쌓이니까 2연속 스코어링을 놓치지 않기 위해 (i=tong.length i--)를 이용함. 아래참고.
+
+    //i=0부터 위로 탐색시 탐색 제한 발생
+    //   i           i          i          i
+    //|3|4        | |4       | |4       | |4
+    //|1|3        | |        | |        | |
+    //|1|2   =>   |3|   =>   |3|   =>   |3|<제거 불가
+    //|3|1        |3|        |3|        |3|
+    //|4|0        |4|score:2 |4|        |4|score:2
+
+    //i=4부터 아래로 탐색시 탐색 제한 없음
+    //   i           i          i          i
+    //|3|4        | |        | |        | |
+    //|1|3        | |3       | |        | |
+    //|1|2   =>   |3|2   =>  |3|2   =>  | |
+    //|3|1        |3|1       |3|1       | |1
+    //|4|0        |4|score:2 |4|0       |4|0 score:2
     
     let score = 0;  
-    for (k in moves) {  // for(k=0; k< moves.length;k++) 과 동일
-        tong = tong.concat(array[moves[k]-1].pop()).replace(/undefined/g,'')
-        for (i=tong.length; i>0; i--){
-            if (tong[i]==tong[i-1]){            
-                tong=tong.slice(0,i-1)
-                score+=2
-                break
-            }
+    for (k in moves) {  // for(k=0; k< moves.length;k++) 과 동일 통체우기
+        tong = tong.concat(array[moves[k]-1].pop(),'!').replace(/undefined+!/g,'')  //undefined라 뺀 숫자 옆의 ! 제거
+    }
+    tong=tong.split('!')
+    for (i=tong.length; i>0;i--) {
+        if (tong[i]==tong[i-1]){
+            tong.splice(i-1,2)
+            score+=2
         }
     }
-    
+
     return score;
 }
 
