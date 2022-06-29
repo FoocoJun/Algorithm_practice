@@ -59,7 +59,7 @@ function Exercise_17677(str1, str2) {
     let count = 0;
     str1=str1.toUpperCase();    str2=str2.toUpperCase();
     JA=toMulti(str1);   JB=toMulti(str2);               //각각 str1, str2의 다중집합 JA, JB
-    let JAs=JA.length;  let JBs=JB.length;              //집합 JA,JB의 크기
+    let JAs=JA.length;  let JBs=JB.length;              //집합 JA,JB의 크기 JAs,JBs
     
     if (JAs>=JBs) {                         //둘 중 보다 많은 다중집합을 기준으로 진행한다.
         for(i=0; i<=JAs; i++) {

@@ -32,7 +32,6 @@ var ex_moves = [1,5,3,5,1,2,1,4]
 var ex_Ans = 4
 
 function Exercise_64061(board, moves) { 
-    var answer = 0;
     let clon = []
     let array = []
     let tong = ''
