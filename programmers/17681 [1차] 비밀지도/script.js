@@ -36,7 +36,7 @@ var ex_arr1 = [9, 20, 28, 18, 11]
 var ex_arr2 = [30, 1, 21, 17, 28]
 var ex_Ans = ["#####","# # #", "### #", "# ##", "#####"]
 
-function Exercise_17681(n, arr1, arr2) {
+function Exercise_17681(n, arr1, arr2) { 
     var answer = [];
     
     for (i=0;i<n;i++){

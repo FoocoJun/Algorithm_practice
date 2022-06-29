@@ -31,7 +31,7 @@ var ex_board = [[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]]
 var ex_moves = [1,5,3,5,1,2,1,4]
 var ex_Ans = 4
 
-function Exercise_64061(board, moves) {
+function Exercise_64061(board, moves) { 
     var answer = 0;
     let clon = []
     let array = []

@@ -13,7 +13,7 @@
 var ex_n = 10
 var ex_Ans = 144
 
-function Exercise_12947(x) {
+function Exercise_12947(x) { 
     var answer = true;
     let y=x;                //x 가공을 위한 클론 y
     let digit=0;            //자릿수의 합

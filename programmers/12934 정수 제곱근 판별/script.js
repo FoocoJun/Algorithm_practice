@@ -12,7 +12,7 @@
 var ex_n = 121
 var ex_Ans = 144
 
-function Exercise_12934(n) {
+function Exercise_12934(n) { 
     return (Math.sqrt(n)%1==0 ? (Math.sqrt(n)+1)**2 :-1)
 }
 

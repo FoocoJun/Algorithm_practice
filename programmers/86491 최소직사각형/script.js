@@ -27,7 +27,7 @@
 var ex_sizes = [[60, 50], [30, 70], [60, 30], [80, 40]]
 var ex_Ans = 4000
 
-function Exercise_86491(sizes) {
+function Exercise_86491(sizes) { 
     for (i=0;i<sizes.length;i++) {
         sizes[i].sort((a,b)=>b-a)
     }

@@ -16,7 +16,7 @@
 var ex_arr = [1,1,3,3,0,1,1]
 var ex_Ans = [1,3,0,1]
 
-function Exercise_12947(arr) {
+function Exercise_12947(arr) { 
     var answer = [];
 
     for (i=0; i<arr.length;i++){

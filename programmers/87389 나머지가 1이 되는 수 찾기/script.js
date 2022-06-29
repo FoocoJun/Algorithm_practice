@@ -15,7 +15,7 @@ function Exercise_87389(n) {            //37을 37보다 1 작은 수 36(1 2 3 ~
     return answer;
 }
 
-function Exercise_87389_sub(n) {
+function Exercise_87389_sub(n) { 
     for (i=3; i<=n-1;i++) {
         if (((n-1)/i)%1==0) {
             return i

@@ -11,7 +11,7 @@
 var ex_n = 45
 var ex_Ans = 7
 
-function Exercise_12947(n) {
+function Exercise_12947(n) { 
     var n = parseInt(n.toString(3).split('').reverse().join(''),3)
     return n;
 }

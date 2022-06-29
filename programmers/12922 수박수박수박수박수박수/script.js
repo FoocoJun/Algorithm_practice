@@ -11,7 +11,7 @@
 var ex_n = 3
 var ex_Ans = "수박수"
 
-function Exercise_12922(n) {
+function Exercise_12922(n) { 
     var answer = '';
     for (i=1;i<n+1;i++) {                 //i가 n번 반복할 때 까지
         if (i%2==1) {                     //i가 홀수면

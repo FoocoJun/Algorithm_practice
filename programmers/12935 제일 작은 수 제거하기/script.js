@@ -12,7 +12,7 @@
 var ex_arr = [4,3,2,1]
 var ex_Ans = [4,3,2]
 
-function Exercise_12935(arr) {
+function Exercise_12935(arr) { 
     arr.splice(arr.indexOf(Math.min(...arr)),1);
     return arr.length ? arr : [-1];
 }

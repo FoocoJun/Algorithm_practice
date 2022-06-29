@@ -10,7 +10,7 @@
 // 각 배열에는 월요일부터 일요일까지 체크인/아웃을 한 시간이 담겨있다.
 // checkin과 checkout 배열의 길이는 각각 7 이다.
 
-function solution(arr1, arr2){
+function solution(arr1, arr2){ 
     let answer=0;
     for (i=0;i<7;i++) {
       arr2[i] = arr2[i]>=29 ? 21 : arr2[i];

@@ -10,7 +10,7 @@
 var ex_n = 118372
 var ex_Ans = 873211
 
-function Exercise_12933(n) {
+function Exercise_12933(n) { 
     return parseInt((n+'').split('').sort((a,b)=>b-a).join(''))
  }
 

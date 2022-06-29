@@ -10,7 +10,7 @@
 var ex_n = 12345
 var ex_Ans = [5,4,3,2,1]
 
-function Exercise_12932(n) {
+function Exercise_12932(n) { 
     return (n+'').split('').reverse().map((a)=>parseInt(a))
 }
 

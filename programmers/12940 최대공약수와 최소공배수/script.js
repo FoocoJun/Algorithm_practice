@@ -12,7 +12,7 @@ var ex_n = 2
 var ex_m = 5
 var ex_Ans = [1,10]
 
-function Exercise_12940(n, m) {
+function Exercise_12940(n, m) { 
     var answer = []
     let num1 = findDivisor(n)       //n의 약수
     let num2 = findDivisor(m)       //m의 약수

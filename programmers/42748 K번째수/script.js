@@ -21,7 +21,7 @@ var ex_array = [1, 5, 2, 6, 3, 7, 4]
 var ex_commands = [[2, 5, 3], [4, 4, 1], [1, 7, 3]]
 var ex_Ans = [5, 6, 3]
 
-function Exercise_42748(array, commands) {
+function Exercise_42748(array, commands) { 
     var answer = [];
     for (i=0; i< commands.length ; i++) {
         let list=array.slice(commands[i][0]-1,commands[i][1]).sort((a,b) => a-b)

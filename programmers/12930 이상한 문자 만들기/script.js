@@ -11,7 +11,7 @@
 var ex_s = "try hello world"
 var ex_Ans = "TrY HeLlO WoRlD"
 
-function Exercise_12930(s) {
+function Exercise_12930(s) { 
     return s
       .toUpperCase()
       .replace(/(\w)(\w)/g, (a) => a[0].toUpperCase() + a[1].toLowerCase());

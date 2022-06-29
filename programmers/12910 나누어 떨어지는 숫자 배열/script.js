@@ -17,7 +17,7 @@ var ex_arr = [5, 9, 7, 10]
 var ex_divisor = 5
 var ex_Ans = [5, 10]
 
-function Exercise_12910(arr, divisor) {
+function Exercise_12910(arr, divisor) { 
     return (arr.filter((x,v)=>x%divisor==0).length>0 ? arr.filter((x,v)=>x%divisor==0).sort((a,b)=>a-b):[-1])
 }
 

@@ -17,7 +17,7 @@
 var ex_n = 6
 var ex_Ans = 8
 
-function Exercise_12943(num) {
+function Exercise_12943(num) { 
     let i = 0
     for(i=0;i<500;i++) {
         if (num==1) {

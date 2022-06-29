@@ -12,7 +12,7 @@
 var ex_n = 123
 var ex_Ans = 6
 
-function Exercise_12931(n) {
+function Exercise_12931(n) { 
     var answer = 0;
     arry=String(n).split('')                //숫자를 문자형으로 변환 후 자릿수 단위로 split
     for (i=0;i<arry.length;i++) {           //자릿수 만큼 반복하는 for

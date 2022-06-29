@@ -14,7 +14,7 @@ var ex_a = 5
 var ex_b = 24
 var ex_Ans = "TUE"
 
-function Exercise_12901(a, b) {
+function Exercise_12901(a, b) { 
     var answer = '';
     //요일 정의
     let nameDay = ['SUN','MON','TUE','WED','THU','FRI','SAT']

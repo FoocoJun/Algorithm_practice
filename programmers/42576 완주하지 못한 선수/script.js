@@ -18,7 +18,7 @@ var ex_participant = ["leo", "kiki", "eden"]
 var ex_completion = ["eden", "kiki"]
 var ex_Ans = "leo"
 
-function Exercise_42576(participant, completion) {
+function Exercise_42576(participant, completion) { 
     participant.sort()
     completion.sort()
     for (i=0; i <participant.length; i++) {
