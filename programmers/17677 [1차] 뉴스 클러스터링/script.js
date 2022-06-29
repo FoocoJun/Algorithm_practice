@@ -47,8 +47,7 @@ function toMulti(s,v) {         //들어오면 2개씩 자르고
         if (s.substring(i,i+2).length==2) {
                 multiJ=multiJ.concat(s.substring(i,i+2).replace(/([A-Z][^A-Z])/g,'')
                                                        .replace(/([^A-Z][A-Z])/g,'')
-                                                       .replace(/([^A-Z][^A-Z])/g,'')
-                                                       .replace(/([^A-Z])/g,''))
+                                                       .replace(/([^A-Z][^A-Z])/g,''))
         }   //영문자로 된 글자 쌍만 유효하고, 기타 공백이나 숫자, 특수 문자가 들어있는 경우는 그 글자 쌍을 버린다.
     }
     return multiJ.filter((a)=>a!='')    //배열에서 공백 요소는 없앤다.
