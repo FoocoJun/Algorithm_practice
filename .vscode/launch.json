@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\hanghae\\본고사01 행렬 음양 더하기\\script.js"
+            "program": "${workspaceFolder}\\hanghae\\본고사03 같은 단어는 싫어\\script.js"
         }
     ]
 }

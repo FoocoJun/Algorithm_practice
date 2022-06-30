@@ -9,3 +9,19 @@
 // - strings의 원소는 길이 1 이상, 100이하인 문자열입니다.
 // - 모든 strings의 원소의 길이는 n보다 큽니다.
 // - 인덱스 1의 문자가 같은 문자열이 여럿 일 경우, 사전순으로 앞선 문자열이 앞쪽에 위치합니다.
+
+function solution(arr, n){
+    arr.sort()
+    for (i=arr.length; i>0 ; i--) {
+        if ( arr[i] == arr[i-1] ) {
+            arr = arr.filter((a)=>a!=arr[i])
+        }
+    }
+    arr.sort((a,b)=> a.charCodeAt(n) - b.charCodeAt(n))
+	return arr;
+}
+
+let arr=["coke", "water", "glass", "dog", "dog", "yogurt", "vitamin"];
+// let arr=["coke", "water", "glass", "dog", "dog", "water", "dog", "yogurt", "vitamin"];
+let n=2;
+console.log(solution(arr, n))
