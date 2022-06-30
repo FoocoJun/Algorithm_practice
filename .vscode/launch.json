@@ -8,10 +8,10 @@
             "type": "pwa-node",
             "request": "launch",
             "name": "Launch Program",
-            "skipFiles": [ 
+            "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\programmers\\64061 크레인 인형뽑기 게임\\script.js" 
+            "program": "${workspaceFolder}\\hanghae\\본고사01 행렬 음양 더하기\\script.js"
         }
     ]
 }
