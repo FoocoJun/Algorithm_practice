@@ -6,7 +6,7 @@
 
 // - N의 범위 : 100,000,000 이하의 자연수
 
-function solution(n){
+function solution(n) {
     return (n+'').split('').reverse().join('+')+'='+(n+'').split('').reduce((a,b)=>(+a)+(+b))
   }
   console.log(solution(718253))

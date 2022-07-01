@@ -10,7 +10,7 @@
 // - 모든 strings의 원소의 길이는 n보다 큽니다.
 // - 인덱스 1의 문자가 같은 문자열이 여럿 일 경우, 사전순으로 앞선 문자열이 앞쪽에 위치합니다.
 
-function solution(arr, n){
+function solution(arr, n) {
     arr.sort()
     for (i=arr.length; i>0 ; i--) {
         if ( arr[i] == arr[i-1] ) {
