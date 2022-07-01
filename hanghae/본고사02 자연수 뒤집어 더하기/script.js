@@ -11,8 +11,6 @@ function solution(n){
   }
   console.log(solution(718253))
   
-  
-  
   //n을 문자화
   //n을 각 숫자별로 분리하여 배열로 만듦
   //배열을 뒤집음

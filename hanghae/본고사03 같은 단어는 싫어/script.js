@@ -14,10 +14,10 @@ function solution(arr, n){
     arr.sort()
     for (i=arr.length; i>0 ; i--) {
         if ( arr[i] == arr[i-1] ) {
-            arr = arr.filter((a)=>a!=arr[i])
+            arr = arr.filter((a)=>a!=arr[i])        //splice를 사용할 경우 홀수개의 중첩문을 지우기 쉽지 않음.
         }
     }
-    arr.sort((a,b)=> a.charCodeAt(n) - b.charCodeAt(n))
+    arr.sort((a,b)=> a.charCodeAt(n) - b.charCodeAt(n))     //아스키 코드 순으로 정렬
 	return arr;
 }
 
